@@ -173,26 +173,56 @@
   }
 
   @media (max-width: 500px) {
-  html {
-    font-size: 65%;
-  }
+	  .navbar .menu-items li{
+		  font-size: 1.6rem;
+	  }
 
-  .navbar .menu-items li{
-      font-size: 1.6rem;
-  }
+		.logo {
+		position: absolute;
+		top: 6px;
+		right: 15px;
+		font-size: 3rem;
+	  }
 
-    .logo {
-    position: absolute;
-    top: 6px;
-    right: 15px;
-    font-size: 3rem;
-  }
-
-  .navbar .menu-items li {
-    margin-bottom: 2.5rem;
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
+	  .navbar .menu-items li {
+		margin-bottom: 2.5rem;
+		font-size: 1.8rem;
+		font-weight: 500;
+	  }
+	}
 }
 
 /** fin de navbar **/
+
+/** main-title **/
+
+.main-title{
+	font-size: 50px;
+	color: royalblue;
+	padding : 0 10vw 0 10vw;
+}
+
+@media (max-width: 500px) {
+	.main-title{
+	font-size:30px;
+	}
+}
+
+/** html **/
+
+html {
+	background-size: contain;
+}
+
+/** background **/
+
+.bg-rblue {
+	background:royalblue;
+	margin-right: 15vw;
+	margin-left: 15vw;
+	border-radius: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
