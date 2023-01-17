@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %}Accueil{% endblock %}
+
 {% block header %}
-	  <h1>{% block title %}Accueil{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-
+<div style="background-image: url('{{ url_for('static', filename='bg-scouts-europe.webp') }}');height: 100vh;"><p>Hello, world!</p></div>
 {% endblock %}
