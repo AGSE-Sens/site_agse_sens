@@ -2,81 +2,81 @@ import os
 
 from flask import Flask
 from flask import render_template
-from flask import send_from_directory
-from flaskext.markdown import Markdown
+# from flask import send_from_directory
+# from flaskext.markdown import Markdown
 from flask_inflate import Inflate
 
 
 def page_not_found(e):
-	return render_template("404.html"), 404
+    return render_template("404.html"), 404
 
 
 def forbiden(e):
-	return render_template("403.html", erreur=e), 403
+    return render_template("403.html", erreur=e), 403
 
 
 def create_app(test_config=None):
-	"""Create and configure an instance of the Flask application."""
-	app = Flask(
-		__name__,
-		instance_relative_config=True,
-		static_url_path="",
-		static_folder="static",
-	)
-	app.register_error_handler(404, page_not_found)
-	app.register_error_handler(403, forbiden)
+    """Create and configure an instance of the Flask application."""
+    app = Flask(
+        __name__,
+        instance_relative_config=True,
+        static_url_path="",
+        static_folder="static",
+    )
+    app.register_error_handler(404, page_not_found)
+    app.register_error_handler(403, forbiden)
 
-	app.config.from_mapping(
-		# a default secret that should be overridden by instance config
-		SECRET_KEY="dev",
-		# store the database in the instance folder
-		DATABASE=os.path.join(app.instance_path, "AGSE.sqlite"),
-	)
+    # app.config.from_mapping(
 
-	if test_config is None:
-		# load the instance config, if it exists, when not testing
-		app.config.from_pyfile("config.py", silent=True)
-	else:
-		# load the test config if passed in
-		app.config.update(test_config)
+        # SECRET_KEY="dev",
 
-	# ensure the instance folder exists
-	try:
-		os.makedirs(app.instance_path)
-	except OSError:
-		pass
+        # DATABASE=os.path.join(app.instance_path, "AGSE.sqlite"),
+    # )
 
-	Markdown(app)
-	inf = Inflate()
-	inf.init_app(app)
+    if test_config is None:
+        # load the instance config, if it exists, when not testing
+        app.config.from_pyfile("config.py", silent=True)
+    else:
+        # load the test config if passed in
+        app.config.update(test_config)
 
-	@app.route("/hello")
-	def hello():
-		return "Hello, World!"
+    # ensure the instance folder exists
+    try:
+        os.makedirs(app.instance_path)
+    except OSError:
+        pass
 
-	@app.route("/favicon.ico")
-	def favicon():
-		return send_from_directory(
-			os.path.join(app.root_path, "static"),
-			"favicon.ico",
-			mimetype="image/vnd.microsoft.icon",
-		)
+    # Markdown(app)
+    inf = Inflate()
+    inf.init_app(app)
 
-	# register the database commands
-	from AGSE import db
+    @app.route("/hello")
+    def hello():
+        return "Hello, World!"
 
-	db.init_app(app)
+    # @app.route("/favicon.ico")
+    # def favicon():
+        # return send_from_directory(
+            # os.path.join(app.root_path, "static"),
+            # "favicon.ico",
+            # mimetype="image/vnd.microsoft.icon",
+        # )
 
-	# apply the blueprints to the app
+    # register the database commands
+    # from site_agse_sens import db
 
-	from AGSE import main
+    # db.init_app(app)
 
-	app.register_blueprint(main.bp)
+    # apply the blueprints to the app
 
-	# make url_for('index') == url_for('blog.index')
-	# in another app, you might define a separate main index here with
-	# app.route, while giving the blog blueprint a url_prefix, but for
-	# the tutorial the blog will be the main index
-	app.add_url_rule("/", endpoint="index")
+    from site_agse_sens import main
 
-	return app
+    app.register_blueprint(main.bp)
+
+    # make url_for('index') == url_for('blog.index')
+    # in another app, you might define a separate main index here with
+    # app.route, while giving the blog blueprint a url_prefix, but for
+    # the tutorial the blog will be the main index
+    app.add_url_rule("/", endpoint="index")
+
+    return app
