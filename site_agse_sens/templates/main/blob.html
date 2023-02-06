@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Blob{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+
+
+{% block content %}
+
+        <div style="height:100vh">
+                <div style="text-align:center;padding-top:40vh;">
+                        <h1 class="main-title">{{title}}</h1><h2 class="sub-title">{{subtitle}}</h2>
+                </div>
+        </div>
+        <div class="bg-rblue">
+        {% for i in filelist %}
+                {% if i[0] == "md" %}
+                    <div>{{ i[1] | markdown }}</div>
+                        {% endif %}
+                        {% if i[0] == "html" %}
+                                <div>{{ i[1] | safe }}</div>
+                        {% endif %}
+        {% endfor %}</div>
+{% endblock %}
