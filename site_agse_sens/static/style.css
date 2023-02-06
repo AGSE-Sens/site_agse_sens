@@ -173,23 +173,23 @@
   }
 
   @media (max-width: 500px) {
-	  .navbar .menu-items li{
-		  font-size: 1.6rem;
-	  }
+    .navbar .menu-items li{
+      font-size: 1.6rem;
+    }
 
-		.logo {
-		position: absolute;
-		top: 6px;
-		right: 15px;
-		font-size: 3rem;
-	  }
+    .logo {
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    font-size: 3rem;
+    }
 
-	  .navbar .menu-items li {
-		margin-bottom: 2.5rem;
-		font-size: 1.5rem;
-		font-weight: 500;
-	  }
-	}
+    .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    }
+  }
 }
 
 /** fin de navbar **/
@@ -197,42 +197,50 @@
 /** main-title **/
 
 .main-title{
-	font-size: 60px;
-	color: royalblue;
-	padding : 0 10vw 0 10vw;
+  font-size: 60px;
+  color: royalblue;
+  padding : 0 10vw 0 10vw;
 }
 
 .sub-title{
-	font-size: 40px;
-	color: black;
-	padding : 0 10vw 0 10vw;
+  font-size: 40px;
+  color: black;
+  padding : 0 10vw 0 10vw;
 }
 
 @media (max-width: 500px) {
-	.main-title{
-	font-size:40px;
-	}
-	.sub-title{
-	font-size: 25px;
-	}
+  .main-title{
+  font-size:40px;
+  }
+  .sub-title{
+  font-size: 25px;
+  }
 }
 
 /** html **/
 
 html {
-	background-size: contain;
+  background-size: contain;
 }
 
 /** background **/
 
 .bg-rblue {
-	border-radius: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background: lightgrey;
-	max-width: 1000px;
-	margin: auto;
-	color: royalblue;
+  padding: 20px;
+  background: lightsteelblue;
+  min-width: 500px;
+  width: 80vw;
+  margin: auto;
+  color: #3f4e60;
+}
+
+/** quotes **/
+
+blockquote {
+  border-left: 3px solid #3f4e60;
+  margin: 10px 0 10px 10px;
+  padding-left: 5px;
+  padding-right: 0;
+  font-style: italic;
+  overflow-wrap: break-word;
 }
