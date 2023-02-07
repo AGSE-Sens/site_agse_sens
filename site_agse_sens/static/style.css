@@ -1,3 +1,11 @@
+/** html **/
+
+html {
+  background-size: contain;
+  font-size: x-large;
+  background : fixed repeat;
+}
+
 /** Navbar **/
 
 *,
@@ -46,7 +54,7 @@
   list-style: none;
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: x-large;
 }
 
 .menu-items a {
@@ -63,9 +71,8 @@
 
 .logo {
   order: 1;
-  font-size: 2.3rem;
   margin-bottom: 0.5rem;
-  margin-top: -5px;
+
 }
 
 @media (max-width: 768px) {
@@ -218,28 +225,25 @@
   }
 }
 
-/** html **/
-
-html {
-  background-size: contain;
-}
-
 /** blob **/
 
 .bg-rblue {
-  padding: 20px;
+  padding: 3vw;
   background: lightsteelblue;
   min-width: 500px;
-  width: 80vw;
+  width: 75vw;
   margin: auto;
-  color: #3f4e60;
+  color: #23354C;
 }
 
 .md-text {
+  font-size:x-large;
   border-left-width: 4px;
   border-left-style: solid;
-  padding-left: 10px;
+  padding-left: 1.5vw;
   border-color: #58697d;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 @media (max-width: 500px) {
@@ -270,4 +274,5 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  font-size: medium;
 }
