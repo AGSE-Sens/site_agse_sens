@@ -10,7 +10,7 @@ import site_agse_sens.src.accueil as accueil
 bp = Blueprint("main", __name__)
 
 
-def render_module(path, filelist, title="", subtitle=""):
+def render_module(path, filelist, title="", subtitle="", page_title="", description=""):
     return render_template(
         "main/blob.html",
         filelist=[
@@ -19,18 +19,30 @@ def render_module(path, filelist, title="", subtitle=""):
         ],
         title=title,
         subtitle=subtitle,
+        page_title=page_title,
+        description=description,
     )
 
 
 @bp.route("/")
 def index():
     return render_module(
-        accueil.path, accueil.filelist, title=accueil.title, subtitle=accueil.subtitle
+        accueil.path,
+        accueil.filelist,
+        title=accueil.title,
+        subtitle=accueil.subtitle,
+        page_title="Accueil",
+        description=accueil.description,
     )
 
 
-@bp.route("/blob/vert")
-def blob():
+@bp.route("/vert")
+def branche_verte():
     return render_module(
-        vert.path, vert.filelist, title=vert.title, subtitle=vert.subtitle
+        vert.path,
+        vert.filelist,
+        title=vert.title,
+        subtitle=vert.subtitle,
+        page_title="Branche Verte",
+        description=vert.description,
     )

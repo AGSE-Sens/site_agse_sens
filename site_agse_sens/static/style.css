@@ -65,6 +65,7 @@
   order: 1;
   font-size: 2.3rem;
   margin-bottom: 0.5rem;
+  margin-top: -5px;
 }
 
 @media (max-width: 768px) {
@@ -223,7 +224,7 @@ html {
   background-size: contain;
 }
 
-/** background **/
+/** blob **/
 
 .bg-rblue {
   padding: 20px;
@@ -234,13 +235,39 @@ html {
   color: #3f4e60;
 }
 
+.md-text {
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding-left: 10px;
+  border-color: #58697d;
+}
+
+@media (max-width: 500px) {
+  .bg-rblue {
+    width: 100vw;
+    min-width: 0;
+  }
+}
 /** quotes **/
 
 blockquote {
-  border-left: 3px solid #3f4e60;
+  border-left: 3px solid #58697d;
   margin: 10px 0 10px 10px;
   padding-left: 5px;
   padding-right: 0;
   font-style: italic;
   overflow-wrap: break-word;
+}
+
+/** footer **/
+
+footer {
+  padding: 2rem;
+  background: royalblue;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
