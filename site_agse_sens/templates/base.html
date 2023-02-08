@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr" style="background-image: url('{{ url_for('static', filename='bg-scouts-europe.webp') }}');">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{% block description %}{% endblock %}">
-  <title>{% block title %}{% endblock %} | AGSE Sens</title>
+  <head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="google-site-verification" content="FGH3O-febOD5Pf8Vc2-UsNf7hxMihEKEaLR3-ZltsXA">
+    <title>{% block title %}{% endblock %} | AGSE Sens</title>
+  </head>
   <body>
     <nav class="navbar">
       <div class="navbar-container container">
@@ -22,22 +24,22 @@
           <li><a href="/contact">Nous contacter</a></li>
         </ul>
         <a href="/" >
-          <img class="logo" height="45px" src="{{ url_for('static', filename='favicon.ico') }}">
+          <img class="logo" height="40x" src="{{ url_for('static', filename='favicon.ico') }}">
         </a>
       </div>
     </nav>
 
-  <section class="content">
-    <header>
-      {% block header %}{% endblock %}
-    </header>
-    {% for message in get_flashed_messages() %}
-      <div class="flash">{{ message }}</div>
-    {% endfor %}
-    {% block content %}{% endblock %}
-  </section>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+    <footer>
+      <span>&copy; 2023 Albéric POINSARD. MIT License. Made with ♥ and Flask.</span>
+    </footer>
   </body>
-  <footer>
-    <span>&copy; 2023 Albéric POINSARD. MIT License. Made with ♥ and Flask.</span>
-  </footer>
 </html>

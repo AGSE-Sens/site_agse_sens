@@ -5,6 +5,8 @@ from flask import render_template
 from werkzeug.exceptions import abort
 
 import site_agse_sens.src.vert as vert
+import site_agse_sens.src.jaune as jaune
+import site_agse_sens.src.rouge as rouge
 import site_agse_sens.src.accueil as accueil
 
 bp = Blueprint("main", __name__)
@@ -45,4 +47,26 @@ def branche_verte():
         subtitle=vert.subtitle,
         page_title="Branche Verte",
         description=vert.description,
+    )
+
+@bp.route("/jaune")
+def branche_jaune():
+    return render_module(
+        jaune.path,
+        jaune.filelist,
+        title=jaune.title,
+        subtitle=jaune.subtitle,
+        page_title="Branche jaune",
+        description=jaune.description,
+    )
+
+@bp.route("/rouge")
+def branche_rouge():
+    return render_module(
+        rouge.path,
+        rouge.filelist,
+        title=rouge.title,
+        subtitle=rouge.subtitle,
+        page_title="Branche rouge",
+        description=rouge.description,
     )

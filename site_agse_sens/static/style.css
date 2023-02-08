@@ -2,7 +2,7 @@
 
 html {
   background-size: contain;
-  font-size: x-large;
+  font-size: medium;
   background : fixed repeat;
 }
 
@@ -34,15 +34,16 @@ html {
   background: gold;
   color: #000;
   opacity: 0.95;
-  height: 50px;
+  height: 40px;
   z-index: 12;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 64px;
+  height: 40px;
   align-items: center;
+  padding-top: 10px;
 }
 
 .menu-items {
@@ -54,7 +55,7 @@ html {
   list-style: none;
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
-  font-size: x-large;
+  font-size: large;
 }
 
 .menu-items a {
@@ -71,8 +72,7 @@ html {
 
 .logo {
   order: 1;
-  margin-bottom: 0.5rem;
-
+  margin-top: -6px;
 }
 
 @media (max-width: 768px) {
@@ -88,15 +88,15 @@ html {
   .navbar-container {
     display: block;
     position: relative;
-    height: 64px;
+    height: 40px;
+    padding-top: 0px;
   }
 
   .navbar-container input[type="checkbox"] {
     position: absolute;
     display: block;
-    height: 32px;
-    width: 30px;
-    top: 20px;
+    height: 40px;
+    width: 40px;
     left: 20px;
     z-index: 5;
     opacity: 0;
@@ -104,10 +104,10 @@ html {
 
   .navbar-container .hamburger-lines {
     display: block;
-    height: 23px;
+    height: 25px;
     width: 35px;
     position: absolute;
-    top: 17px;
+    top: 7.5px;
     left: 20px;
     z-index: 2;
     display: flex;
@@ -237,7 +237,7 @@ html {
 }
 
 .md-text {
-  font-size:x-large;
+  font-size:large;
   border-left-width: 4px;
   border-left-style: solid;
   padding-left: 1.5vw;
