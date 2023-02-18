@@ -49,6 +49,7 @@ def branche_verte():
         description=vert.description,
     )
 
+
 @bp.route("/jaune")
 def branche_jaune():
     return render_module(
@@ -60,6 +61,7 @@ def branche_jaune():
         description=jaune.description,
     )
 
+
 @bp.route("/rouge")
 def branche_rouge():
     return render_module(
@@ -69,4 +71,11 @@ def branche_rouge():
         subtitle=rouge.subtitle,
         page_title="Branche rouge",
         description=rouge.description,
+    )
+
+
+@bp.route("/contact")
+def contact_page():
+    return render_template(
+        "main/contact.html",
     )
