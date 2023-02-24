@@ -4,6 +4,17 @@ html {
   background-size: contain;
   font-size: medium;
   background : fixed repeat;
+  height: 100%;
+}
+
+/** body **/
+
+body {
+	position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
 }
 
 /** Navbar **/
@@ -269,10 +280,17 @@ footer {
   padding: 2rem;
   background: royalblue;
   color: white;
-  font-weight: 500;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 100px;
   font-size: medium;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/** content **/
+
+.content {
+    padding-bottom:300px;
 }

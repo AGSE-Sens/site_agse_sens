@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %}{% endblock %}">
-    <link rel="canonical" href="https://sens-agse.eu.org/" />
-    <meta name="google-site-verification" content="FGH3O-febOD5Pf8Vc2-UsNf7hxMihEKEaLR3-ZltsXA">
     <title>{% block title %}{% endblock %} | AGSE Sens</title>
   </head>
   <body>
@@ -24,8 +22,8 @@
           <li><a href="/rouge">Branche Rouge</a></li>
           <li><a href="/contact">Nous contacter</a></li>
         </ul>
-        <a href="/" >
-          <img class="logo" height="40x" src="{{ url_for('static', filename='favicon.ico') }}">
+        <a href="/" alt="Retour à la page principale" >
+          <img alt="logo" class="logo" height="40x" src="{{ url_for('static', filename='favicon.ico') }}">
         </a>
       </div>
     </nav>

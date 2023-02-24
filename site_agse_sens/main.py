@@ -8,11 +8,21 @@ import site_agse_sens.src.vert as vert
 import site_agse_sens.src.jaune as jaune
 import site_agse_sens.src.rouge as rouge
 import site_agse_sens.src.accueil as accueil
+import site_agse_sens.src.contact as contact
+import site_agse_sens.src.instructions as instructions
 
 bp = Blueprint("main", __name__)
 
 
-def render_module(path, filelist, title="", subtitle="", page_title="", description=""):
+def render_module(
+    path,
+    filelist,
+    title="",
+    subtitle="",
+    page_title="",
+    description="",
+    use_head=True,
+):
     return render_template(
         "main/blob.html",
         filelist=[
@@ -23,6 +33,7 @@ def render_module(path, filelist, title="", subtitle="", page_title="", descript
         subtitle=subtitle,
         page_title=page_title,
         description=description,
+        use_head=use_head,
     )
 
 
@@ -76,6 +87,19 @@ def branche_rouge():
 
 @bp.route("/contact")
 def contact_page():
-    return render_template(
-        "main/contact.html",
+    return render_module(
+        contact.path,
+        contact.filelist,
+        page_title="Contact",
+        description=contact.description,
+        use_head=False,
+    )
+
+@bp.route("/instructions")
+def instructions_page():
+    return render_module(
+        instructions.path,
+        instructions.filelist,
+        page_title="Instructions",
+        use_head=False,
     )
