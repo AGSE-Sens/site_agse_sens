@@ -23,7 +23,7 @@
     <div class="bg-rblue">
         {% for i in filelist %}
             {% if i[0] == "md" %}
-                <div class="md-text">{{ i[1] | markdown }}</div>
+                <div class="md-text">{{ i[1] | safe }}</div>
             {% endif %}
             {% if i[0] == "html" %}
                 <div>{{ i[1] | safe }}</div>

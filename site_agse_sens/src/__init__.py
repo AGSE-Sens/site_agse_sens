@@ -1,6 +1,12 @@
 import os
 
 path = os.path.split(os.path.abspath(__file__))[0] + "/"
+dirlist = sorted([i for i in os.listdir(path) if i != "__pycache__" and not "." in i])
+
+init = """\
+import os
+
+path = os.path.split(os.path.abspath(__file__))[0] + "/"
 filelist = sorted([i for i in os.listdir(path) if i[-3:] == ".md" or i[-5:] == ".html"])
 title = ""
 subtitle = ""
@@ -27,3 +33,12 @@ try :
 except FileNotFoundError :
     pass
 
+"""
+
+
+for i in dirlist:
+    try:
+        with open(path + i + "/__init__.py", "w") as f:
+            f.write(init)
+    except:
+        dirlist.remove(i)

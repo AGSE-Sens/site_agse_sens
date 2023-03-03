@@ -3,9 +3,8 @@ import os
 from flask import Flask
 from flask import render_template
 from flask import send_from_directory
-from flaskext.markdown import Markdown
 from flask_inflate import Inflate
-#from flask_minify import Minify
+from flask_minify import Minify
 
 def page_not_found(e):
     return render_template("404.html"), 404
@@ -27,10 +26,9 @@ def create_app(test_config=None):
 
     app.config.from_pyfile("config.py", silent=True)
 
-    Markdown(app)
     inf = Inflate()
     inf.init_app(app)
-    #Minify(app=app)
+    Minify(app=app)
 
     @app.route("/hello")
     def hello():
