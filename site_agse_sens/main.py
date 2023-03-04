@@ -28,6 +28,8 @@ md_extensions = [
     "subscript",
     "markdown_checklist.extension",
     "markdown_del_ins",
+    "markdown_mark",
+    "mdx_unimoji",
 ]
 
 import site_agse_sens.src as page
@@ -66,26 +68,12 @@ def index():
     return render_module(accueil)
 
 
-@bp.route("/vert")
-def branche_verte():
-    return render_module(vert)
+page.dirlist.remove("accueil")
 
-
-@bp.route("/jaune")
-def branche_jaune():
-    return render_module(jaune)
-
-
-@bp.route("/rouge")
-def branche_rouge():
-    return render_module(rouge)
-
-
-@bp.route("/contact")
-def contact_page():
-    return render_module(contact)
-
-
-@bp.route("/instructions")
-def instructions_page():
-    return render_module(instructions)
+for i in page.dirlist:
+    exec(
+        f"""\
+@bp.route("/{i}")
+def {i}_page():
+    return render_module({i})"""
+    )
