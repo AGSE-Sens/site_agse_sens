@@ -23,6 +23,10 @@ md_extensions = [
     "mdx_unimoji",
 ]
 
+import shutil, os
+path = os.path.split(os.path.abspath(__file__))[0] + "/"
+shutil.copyfile(path + "init.py", path + "src/__init__.py")
+
 import site_agse_sens.src as page
 
 for i in page.dirlist:
