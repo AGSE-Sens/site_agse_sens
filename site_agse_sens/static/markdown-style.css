@@ -1,34 +1,34 @@
-h1 {
+.markdown h1 {
 margin: 25px 0px 20px 0px;
 font-size: xxx-large;
 }
-p {
+.markdown p {
 margin: 5px 0px 10px 0px;
 font-size: large;
 }
-h2 {
+.markdown h2 {
 margin: 20px 0px 15px 0px;
 font-size: xx-large;
 }
-h3 {
+.markdown h3 {
 margin: 15px 0px 15px 0px;
 font-size: x-large;
 }
-strong {
+.markdown strong {
 font-size: inherit;
 }
-em {
+.markdown em {
 font-size: inherit;
 }
-p {
+.markdown p {
 text-align: justify;
 text-justify: inter-word;
 }
-li {
+.markdown li {
 font-size: inherit;
 margin: 10px 0px 10px 40px;
 }
-code {
+.markdown code {
     font-size: medium;
     display: inline-block;
     margin: 0px 3px;
@@ -37,7 +37,7 @@ code {
     color: #58697d;
     background-color: #F8EDDD;
 }
-pre code {
+.markdown pre code {
     display:block;
     border-width: 0 0 3px 3px;
     border-style: none none solid solid;
@@ -45,46 +45,46 @@ pre code {
     margin: 10px;
     padding: 15px
 }
-a{
-transition: 0.5s linear;
+.markdown a{
+transition: 0.3s linear;
 }
-a:hover {
-letter-spacing:0.1em;
+.markdown a:hover {
+letter-spacing:0.05em;
 color: #9D1D16;
 }
-img {
+.markdown img {
   transition: 0.5s linear;
 }
-img:hover {
+.markdown img:hover {
   transform: scale(1.1) rotate(3deg);
 }
-blockquote {
+.markdown blockquote {
   border-left: 3px solid #58697d;
   margin: 10px 0 10px 10px;
   padding-left: 10px;
   padding-right: 0;
   font-style: italic;
 }
-dt {
+.markdown dt {
 text-emphasis: ;
 font-style: italic;
 font-weight: 600;
 }
-dd {
+.markdown dd {
 font-style: italic;
 text-indent: 1em;
 }
-table, th, td {
+.markdown table, .markdown th, .markdown td {
   border: 2px solid;
   border-collapse: collapse;
   text-align: center;
   padding: 5px;
 }
-table thead tr {
-	background-color: #f8eddd;
-	border: 4px solid;
+.markdown table thead tr {
+    background-color: #f8eddd;
+    border: 4px solid;
 }
-mark {
+.markdown mark {
 background-color: #f8eddd;
 color: #23354c;
 }

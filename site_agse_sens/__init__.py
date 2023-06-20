@@ -52,10 +52,8 @@ def create_app(test_config=None):
 
     # apply the blueprints to the app
 
-    from site_agse_sens import main
+    from site_agse_sens import page
 
-    app.register_blueprint(main.bp)
-
-    app.add_url_rule("/", endpoint="index")
+    app.register_blueprint(page.bp)
 
     return app
