@@ -1,4 +1,4 @@
-site_agse_sens/src/*
+src/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
