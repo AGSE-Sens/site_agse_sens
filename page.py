@@ -18,11 +18,10 @@ md_extensions = [
     "sane_lists",
     "toc",
     "wikilinks",
-    # "superscript",
-    # "subscript",
-    # "markdown_checklist.extension",
-    # "markdown_del_ins",
-    # "markdown_mark",
+    "markdown_checklist.extension",
+    "markdown_del_ins",
+    "markdown_sub_sup",
+    "markdown_mark",
     # "mdx_unimoji",
 ]
 

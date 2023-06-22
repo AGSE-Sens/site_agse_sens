@@ -1,0 +1,9 @@
+Flask
+flask-minify
+flask-inflate
+markdown
+markdown_checklist
+markdown_del_ins
+markdown_sub_sup
+markdown_mark
+mdx_unimoji
