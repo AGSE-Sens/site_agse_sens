@@ -4,6 +4,7 @@ html {
     background-size: contain;
     font-size: medium;
     background : fixed repeat;
+    background-size: 600px;
     height: 100%;
 }
 
@@ -73,6 +74,7 @@ body {
     opacity: 0.95;
     height: 40px;
     z-index: 12;
+    font-family: system-ui;
 }
 
 .navbar-container {
@@ -313,6 +315,9 @@ footer {
     left: 0;
     right: 0;
     text-align: center;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 1;
 }
 
 /** content **/

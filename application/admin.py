@@ -35,7 +35,7 @@ def login():
         if error == "":
             session.clear()
             session["user_id"] = 1
-            flash("Vous avez été connécté en tant qu'administrateur.")
+            flash("Vous avez été connecté en tant qu'administrateur.")
             return redirect(url_for("admin.admin"))
 
         flash(error)
