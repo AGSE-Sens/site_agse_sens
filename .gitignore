@@ -1,8 +1,8 @@
 admin.txt
 key.txt
-src/
+application/src/
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*/__pycache__/
 *.py[cod]
 *$py.class
 
