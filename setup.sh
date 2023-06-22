@@ -20,9 +20,9 @@ python -m venv env
 . env/bin/activate
 pip install -r requirement.txt
 pip cache purge
-echo -n "from werkzeug.security import generate_password_hash;print(generate_password_hash('"$password"'))" | python > admin.txt && \
+echo "from werkzeug.security import generate_password_hash;open('admin.txt','w').write((generate_password_hash('"$password"')))" | python && \
 echo "Le mot de passe Administrateur du site a été enregistré."
-echo -n "import os;print(os.urandom(40))" | python > key.txt && \
+echo "import os;open('key.txt','w').write((os.urandom(40)))" | python && \
 echo "La clée de sécurité à été générée."
 cd application
 rm -fr src
