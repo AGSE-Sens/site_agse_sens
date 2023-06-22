@@ -22,7 +22,7 @@ pip install -r requirement.txt
 pip cache purge
 echo "from werkzeug.security import generate_password_hash;open('admin.txt','w').write((generate_password_hash('"$password"')))" | python && \
 echo "Le mot de passe Administrateur du site a été enregistré."
-echo "import os;open('key.txt','w').write((os.urandom(40)))" | python && \
+echo "import os;open('key.txt','wb').write((os.urandom(40)))" | python && \
 echo "La clée de sécurité à été générée."
 cd application
 rm -fr src

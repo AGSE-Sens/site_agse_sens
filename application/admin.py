@@ -26,10 +26,11 @@ def login():
             with open("admin.txt","r") as file:
                 adminpswd = file.read()
         except :
-            error += "Mot de passe Administrateur non renseigné\n"
+            error += "Mot de passe Administrateur non renseigné"
 
         if not check_password_hash(adminpswd, password):
-            error += "Mot de passe incorrect\n"
+            if error == "":
+                error = "Mot de passe incorrect"
 
         if error == "":
             session.clear()
