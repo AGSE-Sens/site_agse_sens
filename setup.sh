@@ -15,7 +15,7 @@ while IFS= read -r -s -n1 char; do
     printf '*' >/dev/tty
   fi
 done
-cd app
+cd application
 rm -fr src
 git clone --depth=1 https://github.com/AGSE-Sens/src
 rm -fr env
