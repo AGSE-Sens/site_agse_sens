@@ -68,10 +68,13 @@ def create_app(test_config=None):
 
     # apply the blueprints to the app
 
-    from site_agse_sens import page
+    from application import page
     app.register_blueprint(page.bp)
 
-    from site_agse_sens import admin
+    from application import admin
     app.register_blueprint(admin.bp)
 
     return app
+
+if __name__ == "__main__":
+    create_app()

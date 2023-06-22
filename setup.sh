@@ -15,6 +15,7 @@ while IFS= read -r -s -n1 char; do
     printf '*' >/dev/tty
   fi
 done
+cd app
 rm -fr src
 git clone --depth=1 https://github.com/AGSE-Sens/src
 rm -fr env
@@ -26,4 +27,4 @@ echo "from werkzeug.security import generate_password_hash;print(generate_passwo
 echo "Le mot de passe Administrateur du site a été enregistré."
 echo "import os;print(os.urandom(40))" | python > key.txt && \
 echo "La clée de sécurité à été générée."
-
+cd ..
