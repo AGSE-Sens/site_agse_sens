@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 password=''
 echo -n "Mot de passe Admin :"
 while IFS= read -r -s -n1 char; do
@@ -15,15 +15,15 @@ while IFS= read -r -s -n1 char; do
     printf '*' >/dev/tty
   fi
 done
-echo "from werkzeug.security import generate_password_hash;print(generate_password_hash('"$password"'))" | python > admin.txt && \
-echo "Le mot de passe Administrateur du site a été enregistré."
-echo "import os;print(os.urandom(40))" | python > key.txt && \
-echo "La clée de sécurité à été générée."
+rm -fr src
+git clone --depth=1 https://github.com/AGSE-Sens/src
 rm -fr env
 python -m venv env
 . env/bin/activate
 pip install -r requirement.txt
 pip cache purge
-desactivate
-rm -fr src
-git clone --depth=1 https://github.com/AGSE-Sens/src
+echo "from werkzeug.security import generate_password_hash;print(generate_password_hash('"$password"'))" | python > admin.txt && \
+echo "Le mot de passe Administrateur du site a été enregistré."
+echo "import os;print(os.urandom(40))" | python > key.txt && \
+echo "La clée de sécurité à été générée."
+
