@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Page d'Administration{% endblock %}
+
+{% block description %}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <div style="height:15vh"></div>
+    <div class="bg-rblue">
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+        <a alt="Déconnexion" href="{{ url_for('admin.logout') }}">Se Déconnecter</a>
+        <p>Voici la page d'administration.</p>
+    </div>
+{% endblock %}
+

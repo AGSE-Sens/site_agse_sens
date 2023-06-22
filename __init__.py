@@ -21,6 +21,22 @@ def create_app(test_config=None):
         static_url_path="",
         static_folder="static",
     )
+    app.config.from_mapping(
+        # a default secret that should be overridden by instance config
+        SECRET_KEY=os.urandom(40),
+    )
+    try :
+        with open("key.txt","r") as file:
+            app.config.from_mapping(
+                # a default secret that should be overridden by instance config
+                SECRET_KEY=file.read(),
+            )
+    except :
+        print(
+"""***************************************************
+                !!! No key set !!!
+***************************************************""")
+
     app.register_error_handler(404, page_not_found)
     app.register_error_handler(403, forbiden)
 
@@ -53,7 +69,9 @@ def create_app(test_config=None):
     # apply the blueprints to the app
 
     from site_agse_sens import page
-
     app.register_blueprint(page.bp)
+
+    from site_agse_sens import admin
+    app.register_blueprint(admin.bp)
 
     return app
