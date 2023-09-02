@@ -6,4 +6,4 @@ markdown_checklist
 markdown_del_ins
 markdown_sub_sup
 markdown_mark
-mdx_unimoji
+git+https://github.com/kernc/mdx_unimoji.git
