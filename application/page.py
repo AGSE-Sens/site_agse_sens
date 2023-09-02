@@ -22,7 +22,7 @@ md_extensions = [
     "markdown_del_ins",
     "markdown_sub_sup",
     "markdown_mark",
-    # "mdx_unimoji",
+    "mdx_unimoji",
 ]
 
 path = os.path.split(os.path.abspath(__file__))[0] + "/src/"

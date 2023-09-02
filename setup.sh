@@ -1,29 +1,9 @@
 #!/bin/bash
-password=''
-echo -n "Mot de passe Admin :"
-while IFS= read -r -s -n1 char; do
-  [[ -z $char ]] && { printf '\n' >/dev/tty; break; } # ENTER pressed; output \n and break.
-  if [[ $char == $'\x7f' ]]; then # backspace was pressed
-      # Remove last char from output variable.
-      [[ -n $password ]] && password=${password%?}
-      # Erase '*' to the left.
-      printf '\b \b' >/dev/tty
-  else
-    # Add typed char to output variable.
-    password+=$char
-    # Print '*' in its stead.
-    printf '*' >/dev/tty
-  fi
-done
 rm -fr env
-python -m venv env
+python3 -m venv env
 . env/bin/activate
-pip install -r requirement.txt
-pip cache purge
-echo "from werkzeug.security import generate_password_hash;open('admin.txt','w').write((generate_password_hash('"$password"')))" | python && \
-echo "Le mot de passe Administrateur du site a été enregistré."
-echo "import os;open('key.txt','wb').write((os.urandom(40)))" | python && \
-echo "La clée de sécurité à été générée."
+python3 -m pip install --upgrade -r requirement.txt
+python3 -m pip cache purge
 cd application
 rm -fr src
 git clone --depth=1 https://github.com/AGSE-Sens/src

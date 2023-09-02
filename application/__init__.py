@@ -6,6 +6,7 @@ from flask import send_from_directory
 from flask_inflate import Inflate
 from flask_minify import Minify
 
+
 def page_not_found(e):
     return render_template("404.html"), 404
 
@@ -25,17 +26,18 @@ def create_app(test_config=None):
         # a default secret that should be overridden by instance config
         SECRET_KEY=os.urandom(40),
     )
-    try :
-        with open("key.txt","r") as file:
+    try:
+        with open("key.txt", "rb") as keyfile:
             app.config.from_mapping(
                 # a default secret that should be overridden by instance config
-                SECRET_KEY=file.read(),
+                SECRET_KEY=keyfile.read(),
             )
-    except :
+    except:
         print(
-"""***************************************************
-                !!! No key set !!!
-***************************************************""")
+            """***************************************************
+               !!! No key found !!!
+***************************************************"""
+        )
 
     app.register_error_handler(404, page_not_found)
     app.register_error_handler(403, forbiden)
@@ -69,12 +71,11 @@ def create_app(test_config=None):
     # apply the blueprints to the app
 
     from application import page
+
     app.register_blueprint(page.bp)
 
-    from application import admin
-    app.register_blueprint(admin.bp)
-
     return app
+
 
 if __name__ == "__main__":
     create_app()
