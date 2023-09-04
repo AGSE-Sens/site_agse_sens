@@ -1,4 +1,4 @@
-[submodule "application/src"]
-	path = application/src
-	url = https://github.com/AGSE-Sens/src.git
+[submodule "application/pages"]
+	path = application/pages
+	url = https://github.com/AGSE-Sens/pages.git
 	branch = main

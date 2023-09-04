@@ -25,7 +25,7 @@ md_extensions = [
     "mdx_unimoji",
 ]
 
-path = os.path.split(os.path.abspath(__file__))[0] + "/src/"
+path = os.path.split(os.path.abspath(__file__))[0] + "/pages/"
 
 bp = Blueprint("page", __name__)
 
