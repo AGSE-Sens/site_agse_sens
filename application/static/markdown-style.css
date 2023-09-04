@@ -45,12 +45,6 @@ margin: 10px 0px 10px 40px;
     margin: 10px;
     padding: 15px
 }
-.markdown img {
-  transition: 0.5s linear;
-}
-.markdown img:hover {
-  transform: scale(1.1) rotate(3deg);
-}
 .markdown blockquote {
   border-left: 3px solid #58697d;
   margin: 10px 0 10px 10px;

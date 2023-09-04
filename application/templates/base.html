@@ -3,38 +3,102 @@
   <head>
       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename='markdown-style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %}{% endblock %}">
     <title>{% block title %}{% endblock %} | AGSE Sens</title>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="navbar-container container">
-        <input type="checkbox" name="" id="">
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <ul class="menu-items">
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/page/jaune">Branche Jaune</a>
-            <ul class="submenu-items">
-              <li><a href="/page/jaune/louvetaux">Louvetaux</a></li>
-              <li><a href="/page/jaune/louvettes">Louvettes</a></li>
+    <img id="main-logo" alt="logo" src="{{ url_for('static', filename='favicon.ico') }}">
+    <nav id="menu">
+      <label for="tm" id="toggle-menu">
+        <img alt="logo" class="logo" src="{{ url_for('static', filename='favicon.ico') }}">
+      <span class="drop-icon">▾</span></label>
+      <input type="checkbox" id="tm">
+      <ul class="main-menu cf">
+        <li><a href="/page/rouge">Sample</a></li>
+        <li><a href="#">Dropdown
+            <span class="drop-icon">▾</span>
+            <label title="Toggle Drop-down" class="drop-icon" for="sm0">▾</label>
+          </a>
+          <input type="checkbox" id="sm0">
+          <ul class="sub-menu">
+            <li><a href="#">Item 1.1</a></li>
+            <li><a href="#">Item 1.2</a></li>
+            <li><a href="#">Item 1.3</a></li>
+            <li><a href="#">Item 1.4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">2-level DD
+            <span class="drop-icon">▾</span>
+            <label title="Toggle Drop-down" class="drop-icon" for="sm1">▾</label>
+          </a>
+          <input type="checkbox" id="sm1">
+          <ul class="sub-menu">
+            <li><a href="#">Item 2.1</a></li>
+            <li><a href="#">Item 2.2
+                <span class="drop-icon">▸</span>
+                <label title="Toggle Drop-down" class="drop-icon" for="sm2">▾</label>
+              </a>
+              <input type="checkbox" id="sm2">
+              <ul class="sub-menu">
+                <li><a href="#">Item 2.2.1</a></li>
+                <li><a href="#">Item 2.2.2</a></li>
+                <li><a href="#">Item 2.2.3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Item 2.3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Multiple Levels
+            <span class="drop-icon">▾</span>
+            <label title="Toggle Drop-down" class="drop-icon" for="sm3">▾</label>
+        </a>
+        <input type="checkbox" id="sm3">
+        <ul class="sub-menu">
+          <li><a href="">3.1
+            <span class="drop-icon">▸</span>
+            <label title="Toggle Drop-down" class="drop-icon" for="sm4">▾</label>
+          </a>
+          <input type="checkbox" id="sm4">
+            <ul class="sub-menu">
+              <li><a href="">3.1.1</a></li>
+              <li><a href="">3.1.2</a></li>
+              <li><a href="">3.1.3</a></li>
+              <li><a href="">3.1.4</a></li>
             </ul>
           </li>
-          <li><a href="/page/vert">Branche Verte</a></li>
-          <li><a href="/page/rouge">Branche Rouge</a></li>
-          <li><a href="/page/contact">Nous contacter</a></li>
-        </ul>
-        <a href="/" alt="Retour à la page principale" class="logo" >
-          <img alt="logo" class="logo" height="40px" src="{{ url_for('static', filename='favicon.ico') }}">
-        </a>
-      </div>
-    </nav>
+          <li><a href="">3.2
+            <span class="drop-icon">▸</span>
+            <label title="Toggle Drop-down" class="drop-icon" for="sm5">▾</label>
+          </a>
+          <input type="checkbox" id="sm5">
 
+            <ul class="sub-menu">
+              <li><a href="">3.2.1</a></li>
+              <li><a href="">3.2.2</a></li>
+              <li><a href="">3.2.3</a></li>
+            </ul>
+          </li>
+          <li><a href="">3.3
+              <span class="drop-icon">▸</span>
+                <label title="Toggle Drop-down" class="drop-icon" for="sm6">▾</label>
+              </a>
+              <input type="checkbox" id="sm6">
+
+            <ul class="sub-menu">
+              <li><a href="">3.3.1</a></li>
+              <li><a href="">3.3.2</a></li>
+              <li><a href="">3.2.2</a></li>
+              <li><a href="">3.3.4</a></li>
+              <li><a href="">3.3.5</a></li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </nav>
     <section class="content">
       <header>
         {% block header %}{% endblock %}
@@ -42,7 +106,7 @@
       {% block content %}{% endblock %}
     </section>
     <footer>
-      <span>Copyleft 2023 Albéric POINSARD – AGPL License – Made with ♥ and Flask.</span>
+      <span><a href="/page/licence">Copyleft 2023 Albéric POINSARD – AGPL License – Made with ♥ and Flask.</a></span>
     </footer>
   </body>
 </html>

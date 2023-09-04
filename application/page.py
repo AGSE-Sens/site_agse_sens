@@ -60,7 +60,7 @@ def render_page(page_path):
         pass
 
     return render_template(
-        "main/blob.html",
+        "main/md.html",
         filelist=[
             [
                 os.path.splitext(page_path+i)[1][1:],
