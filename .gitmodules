@@ -1,0 +1,4 @@
+[submodule "application/src"]
+	path = application/src
+	url = https://github.com/AGSE-Sens/src.git
+	branch = main
