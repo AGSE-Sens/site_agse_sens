@@ -2,3 +2,4 @@
 	path = application/pages
 	url = https://github.com/AGSE-Sens/pages.git
 	branch = main
+    shallow = true
