@@ -16,3 +16,5 @@ echo -e "#!/bin/bash
 . env/bin/activate
 python3 freeze.py
 deactivate" > freeze && chmod +x freeze
+./freeze
+deactivate
