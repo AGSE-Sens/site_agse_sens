@@ -6,7 +6,7 @@ python3 -m pip install --upgrade -r requirement.txt
 python3 -m pip cache purge
 echo "import os;open('key.txt','wb').write((os.urandom(40)))" | python3 && \
 echo "La clée de sécurité à été générée."
-git submodule update --remote --merge
+git submodule update --remote
 echo -e "#!/bin/bash
 . env/bin/activate
 export FLASK_DEBUG=ON
