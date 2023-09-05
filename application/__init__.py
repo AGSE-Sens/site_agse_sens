@@ -5,7 +5,7 @@ from flask import render_template
 from flask import send_from_directory
 from flask_inflate import Inflate
 from flask_minify import Minify
-
+from application.sitemap import sitemapper
 
 def page_not_found(e):
     return render_template("404.html"), 404
@@ -48,7 +48,7 @@ def create_app(test_config=None):
     inf.init_app(app)
     Minify(app=app)
 
-    @app.route("/hello")
+    @app.route("/hello/")
     def hello():
         return "Hello, World!"
 
@@ -68,11 +68,22 @@ def create_app(test_config=None):
             mimetype="text/plain",
         )
 
+    @app.route("/404/")
+    @app.route("/404.html")
+    def page_not_found_no_error():
+        return render_template("404.html")
+
+    @app.route("/sitemap.xml")
+    def r_sitemap():
+        return sitemapper.generate(gzip=True)
+
     # apply the blueprints to the app
 
     from application import page
 
     app.register_blueprint(page.bp)
+
+    sitemapper.init_app(app)
 
     return app
 

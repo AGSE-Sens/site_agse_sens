@@ -1,4 +1,5 @@
 import os
+import time
 
 from flask import Flask
 from flask import Blueprint
@@ -6,6 +7,7 @@ from flask import redirect
 from flask import render_template
 from flask import abort
 from werkzeug.exceptions import abort
+from application.sitemap import sitemapper
 
 import markdown
 
@@ -29,6 +31,14 @@ path = os.path.split(os.path.abspath(__file__))[0] + "/pages/"
 
 bp = Blueprint("page", __name__)
 
+def get_lastmod_date(url_path):
+    filelist = [f for f in os.listdir(path + url_path)]
+    last_m_date = 0
+    for i in filelist:
+        if os.path.isfile(path + url_path + "/" + i) and (i[-3:] == ".md" or i[-4:] == ".html"):
+            if os.path.getmtime(path + url_path + "/" + i) > last_m_date:
+                last_m_date = os.path.getmtime(path + url_path + "/" + i)
+    return time.strftime('%Y-%m-%d', time.gmtime(last_m_date))
 
 def render_page(page_path):
     if os.path.exists(page_path) == False :
@@ -80,12 +90,14 @@ def render_page(page_path):
         use_head=use_head,
     )
 
-
+@sitemapper.include()
 @bp.route("/")
 def accueil():
     return render_page( path + "accueil" + "/")
 
+fl = [x[0][18:] for x in os.walk("application/pages/")][1:]
 
-@bp.route("/page/<path:name>")
+@sitemapper.include(url_variables={"name": fl}, lastmod=[get_lastmod_date(f) for f in fl])
+@bp.route("/page/<path:name>/")
 def show_page(name):
     return render_page( path + name + "/")
