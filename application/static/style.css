@@ -48,6 +48,9 @@ body {
     font-size: 30px;
     padding : 0;
     }
+    .title-container{
+        padding-top: 10vh;
+    }
 }
 
 /** md **/
