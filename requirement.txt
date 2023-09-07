@@ -1,6 +1,7 @@
 Flask
 flask-minify
 flask-inflate
+flask-compress
 git+https://github.com/alberic89/flask-sitemapper.git
 Frozen-Flask
 markdown
