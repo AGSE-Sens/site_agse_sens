@@ -6,25 +6,30 @@ html {
     background : fixed repeat;
     background-size: 600px;
     height: 100%;
+    background-image: url('/bg-scouts-europe.webp');
 }
 
 /** body **/
 
 body {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        min-height: 100%;
-        width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
 }
 
 /** main-title **/
 
 .title-container{
-        text-align: center;
-        min-height: 70vh;
-        padding-top: 30vh;
-        padding-bottom: 10vh;
+    text-align: center;
+    min-height: 70vh;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+}
+
+.title-null-container {
+    height: 15vh;
 }
 
 .main-title{
@@ -39,7 +44,7 @@ body {
     padding : 0 10vw 0 10vw;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1020px) {
     .main-title{
     font-size:50px;
     padding : 0 ;
@@ -68,7 +73,7 @@ body {
     padding: 3vw;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1020px) {
     .bg-rblue {
         width: 100vw;
         min-width: 0;

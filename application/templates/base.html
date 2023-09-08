@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr" style="background-image: url('{{ url_for('static', filename='bg-scouts-europe.webp') }}');">
+<html lang="fr">
   <head>
-      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-      <link rel="stylesheet" href="{{ url_for('static', filename='markdown-style.css') }}">
-      <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="screen">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='md.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}" media="screen">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='print.css') }}" media="print">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %}{% endblock %}">
     <title>{% block title %}{% endblock %} | AGSE Sens</title>
   </head>
   <body>
-    <img id="main-logo" alt="logo" src="{{ url_for('static', filename='favicon.ico') }}">
     <nav id="menu">
+      <img id="main-logo" alt="logo" src="{{ url_for('static', filename='favicon.ico') }}">
       <label for="tm" id="toggle-menu">
         <img alt="logo" class="logo" src="{{ url_for('static', filename='favicon.ico') }}">
       <span class="drop-icon">▾</span></label>
