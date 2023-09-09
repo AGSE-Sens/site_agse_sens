@@ -2,4 +2,9 @@
 	path = application/pages
 	url = https://github.com/AGSE-Sens/pages.git
 	branch = main
-    shallow = true
+	shallow = true
+[submodule "application/private"]
+	path = application/private
+	url = https://github.com/AGSE-Sens/private.git
+	branch = main
+	shallow = true
