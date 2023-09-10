@@ -1,2 +1,15 @@
+#        _
+#       [ ]
+#      (   )
+#       |>|
+#    __/===\__
+#   //| o=o |\\
+# <]  | o=o |  [>
+#     \=====/
+#    / / | \ \
+#   <_________>
 User-agent: *
-Allow: /
+Allow: /$
+Allow: /page/
+Disallow: /private/
+Sitemap: https://sens-agse.eu.org/sitemap.xml

@@ -54,14 +54,6 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World!"
 
-    @app.route("/favicon.ico")
-    def favicon():
-        return send_from_directory(
-            os.path.join(app.root_path, "static"),
-            "favicon.ico",
-            mimetype="image/vnd.microsoft.icon",
-        )
-
     @app.route("/robots.txt")
     def robot():
         return send_from_directory(
@@ -82,8 +74,10 @@ def create_app(test_config=None):
     # apply the blueprints to the app
 
     from application import page
+    from application import private
 
     app.register_blueprint(page.bp)
+    app.register_blueprint(private.bp)
 
     sitemapper.init_app(app)
 
