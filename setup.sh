@@ -2,8 +2,7 @@
 rm -fr env
 python3 -m venv env
 . env/bin/activate
-export CLFAGS='-g0 -Wl -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib'
-python3 -m pip install --upgrade -r requirement.txt --global-option=build_ext
+CLFAGS='-g0 -Wl --strip-all -Os -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib' python3 -m pip install --upgrade -r requirement.txt --global-option=build_ext --use-pep517 --compile
 python3 -m pip cache purge
 echo "import os;open('key.txt','wb').write((os.urandom(40)))" | python3 && \
 echo "La clée de sécurité à été générée."
