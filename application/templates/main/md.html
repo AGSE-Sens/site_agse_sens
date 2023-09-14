@@ -20,14 +20,16 @@
     {% endif %}
     <div class="bg-rblue">
         {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
+        <div class="flash-c">
+            <div class="flash">{{ message }}</div>
+        </div>
         {% endfor %}
         {% for i in filelist %}
             {% if i[0] == "md" %}
                 <div class="markdown">{{ i[1] | safe }}</div>
             {% endif %}
             {% if i[0] == "html" %}
-                <div>{{ i[1] | safe }}</div>
+                <div class="html-c">{{ i[1] | safe }}</div>
             {% endif %}
         {% endfor %}
     </div>

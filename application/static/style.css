@@ -127,3 +127,35 @@ footer a:focus {
 footer a:hover {
   border-bottom: 1px solid;
 }
+
+/* login container */
+
+.login-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* login form */
+
+.login-f {
+    border-width: 5px;
+    width: fit-content;
+    padding: 5px 15px 15px 15px;
+    border-color: red;
+    border-style: dashed;
+}
+
+.login-f label {
+    padding: 0px 10px 0px 10px;
+}
+
+.login-f input {
+    margin: 10px 10px 0px 10px;
+}
+
+/* html container */
+
+.html-c {
+    padding: 3vw;
+}

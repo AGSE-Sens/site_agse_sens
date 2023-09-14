@@ -74,3 +74,17 @@
   background-color: #f8eddd;
   color: #23354c;
 }
+.flash {
+  margin: 1em 0;
+  padding: 1em;
+  background: #cae6f6;
+  border: 2px solid #377ba8;
+  border-radius: 1em;
+}
+.flash-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+  margin-bottom: -3vw;
+}

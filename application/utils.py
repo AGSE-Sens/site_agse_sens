@@ -2,7 +2,9 @@ import os
 import time
 
 from flask import render_template
+from flask import session, redirect, url_for
 from werkzeug.exceptions import abort
+import functools
 
 import markdown
 
@@ -82,3 +84,11 @@ def render_page(page_path, path):
         use_head=use_head,
         noindex=noindex,
     )
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if session.get("logged", default=False) == False:
+            return redirect(url_for("private.login", name=kwargs["name"]))
+        return view(**kwargs)
+    return wrapped_view

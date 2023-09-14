@@ -24,7 +24,13 @@ def create_app(test_config=None):
     app.config.from_mapping(
         # a default secret that should be overridden by instance config
         SECRET_KEY=os.urandom(40),
+        PREFERRED_URL_SCHEME="https",
     )
+    if app.config["DEBUG"]==False:
+        app.config.from_mapping(
+            USE_X_SENDFILE=True,
+        )
+
     try:
         with open("key.txt", "rb") as keyfile:
             app.config.from_mapping(
