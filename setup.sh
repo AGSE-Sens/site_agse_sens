@@ -1,7 +1,4 @@
 #!/bin/bash
-rm -fr env
-python3 -m venv env
-. env/bin/activate
 password=''
 echo -n "Choisir le mot de passe : "
 while IFS= read -r -s -n1 char; do
@@ -18,6 +15,9 @@ while IFS= read -r -s -n1 char; do
     printf '*' >/dev/tty
   fi
 done
+rm -fr env
+python3 -m venv env
+. env/bin/activate
 python3 -m pip install --upgrade -r requirement.txt
 python3 -m pip cache purge
 echo "import os;open('key.txt','wb').write((os.urandom(40)))" | python3 && \
