@@ -49,8 +49,8 @@ def create_app(test_config=None):
     compress.init_app(app)
     Minify(
         app=app,
-        caching_limit=12,
-        )
+        caching_limit=120,
+    )
 
     @app.route("/hello/")
     def hello():
