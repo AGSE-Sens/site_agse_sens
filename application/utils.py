@@ -25,10 +25,13 @@ md_extensions = [
 ]
 
 def get_lastmod_date(url_path, path):
-    filelist = [f for f in os.listdir(path + url_path)]
+    try :
+        filelist = [f for f in os.listdir(path + url_path)]
+    except FileNotFoundError:
+        return 0
     last_m_date = 0
     for i in filelist:
-        if os.path.isfile(path + url_path + "/" + i) and (i[-3:] == ".md" or i[-4:] == ".html"):
+        if os.path.isfile(path + url_path + "/" + i) and (i[-3:] == ".md" or i[-5:] == ".html"):
             if os.path.getmtime(path + url_path + "/" + i) > last_m_date:
                 last_m_date = os.path.getmtime(path + url_path + "/" + i)
     return time.strftime('%Y-%m-%d', time.gmtime(last_m_date))

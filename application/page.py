@@ -8,7 +8,7 @@ path = os.path.split(os.path.abspath(__file__))[0] + "/pages/"
 
 bp = Blueprint("page", __name__)
 
-@sitemapper.include()
+@sitemapper.include(lastmod=get_lastmod_date("accueil", path))
 @bp.route("/")
 def accueil():
     return render_page( path + "accueil" + "/", path)
